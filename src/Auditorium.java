@@ -117,5 +117,21 @@ public class Auditorium {
         return false;
     }
 
+    // this if for returning the number of seats currently available
+    public int getAvailableSeatCount() {
+
+        int availableSeats = 0;
+
+        for (int row = 0; row < rows; row++) {
+            for (int column = 0; column < columns; column++) {
+
+                if (seats[row][column] == null) {
+                    availableSeats++;
+                }
+            }
+        }
+
+        return availableSeats;
+    }
 
 }
