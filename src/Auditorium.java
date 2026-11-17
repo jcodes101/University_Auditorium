@@ -28,4 +28,19 @@ public class Auditorium {
 
         seats = new Student[rows][columns];
     }
+
+    // this checks whether every seat has been reserved
+    public boolean audtoriumFull() {
+
+        for (int row = 0; row < rows; row++) {
+            for (int column = 0; column < columns; column++) {
+
+                if (seats[row][column] == null) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    
 }
