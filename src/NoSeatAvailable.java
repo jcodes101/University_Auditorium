@@ -12,7 +12,7 @@
 public class NoSeatAvailable extends Exception {
 
     public NoSeatAvailable(String meetingDate, String meetingTime) {
-        super("There Are No Seats Available\n"
+        super("No Seat Available\n"
         + "Meeting Date: " + meetingDate + "\n"
         + "Meeting Time: " + meetingTime);
     }
