@@ -7,7 +7,7 @@ public class Student {
     private String lastName;
     private String studentId;
 
-    private int reservedRow
+    private int reservedRow;
     private int reservedColumn;
 
     // this constructor initializes student info
@@ -56,6 +56,12 @@ public class Student {
     public void setReservation(int row, int column) {
         this.reservedRow = row;
         this.reservedColumn = column;
+    }
+
+    // this cancels teh students reservation
+    public void cancelReservation() {
+        this.reservedRow = -1;
+        this.reservedColumn = -1;
     }
 
     // ^ doing things this way both the Student & Auditorium class 
