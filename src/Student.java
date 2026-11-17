@@ -20,4 +20,30 @@ public class Student {
         this.reservedRow = -1;
         this.reservedColumn = -1;
     }
+
+    // = getters =
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getStudentId() {
+        return studentId;
+    }
+
+    public int getReservedRow() {
+        return reservedRow;
+    }
+
+    public int getReservedColumn() {
+        return reservedColumn;
+    }
+
+    public String getFullName() {
+        return firstName + " " + lastName;
+    }
 }
