@@ -86,4 +86,36 @@ public class Auditorium {
         // and this is a safety check in case no available seat was found
         throw new NoSeatAvailable(meetingDate, meetingTime);
     }
+
+    
+    // this cancels a student's reservation
+    public boolean cancelReservation(Student student) {
+
+        if (student == null || !student.hasReservation()) {
+            return false;
+        }
+
+        int row = student.getReservedRow() - 1;
+        int column = student.getReservedColumn() - 1;
+
+        // this is to make sure the student's seat is valid and belongs to them
+        if (row < 0 || row >= rows || column < 0 || column >= columns) {
+            return false;
+        }
+
+        if (seats[row][column] == student) {
+
+            // and this makes the seat available again
+            seats[row][column] = null;
+
+            // clear the student's reservation information
+            student.cancelReservation();
+
+            return true;
+        }
+
+        return false;
+    }
+
+
 }
