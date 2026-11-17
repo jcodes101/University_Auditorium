@@ -21,7 +21,7 @@ public class Student {
         this.reservedColumn = -1;
     }
 
-    // = getters =
+    // = getters & setters =
 
     public String getFirstName() {
         return firstName;
@@ -46,4 +46,19 @@ public class Student {
     public String getFullName() {
         return firstName + " " + lastName;
     }
+
+    // this is a check to see if the student has a reservation already
+    public boolean hasReservation() {
+        return reservedRow != -1 && reservedColumn != -1;
+    }
+
+    // and then this updates that specific student's assigned seat
+    public void setReservation(int row, int column) {
+        this.reservedRow = row;
+        this.reservedColumn = column;
+    }
+
+    // ^ doing things this way both the Student & Auditorium class 
+    // will get updated when a reseveration happens
+
 }
