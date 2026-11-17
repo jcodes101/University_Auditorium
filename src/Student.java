@@ -11,7 +11,7 @@ public class Student {
     private int reservedColumn;
 
     // this constructor initializes student info
-    public Student(String firstName, String lastName, String student) {
+    public Student(String firstName, String lastName, String studentId) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.studentId = studentId;
