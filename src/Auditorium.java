@@ -16,9 +16,7 @@ public class Auditorium {
     public Auditorium(String meetingDate, String meetingTime, int rows, int columns) {
 
         if (rows <= 0 || columns <= 0) {
-            throw new IllegalArgumentException(
-                "Rows and columns must be greater than 0"
-            )
+            throw new IllegalArgumentException("Rows and columns must be greater than 0");
         }
 
         this.meetingDate = meetingDate;
@@ -30,7 +28,7 @@ public class Auditorium {
     }
 
     // this checks whether every seat has been reserved
-    public boolean audtoriumFull() {
+    public boolean auditoriumFull() {
 
         for (int row = 0; row < rows; row++) {
             for (int column = 0; column < columns; column++) {
