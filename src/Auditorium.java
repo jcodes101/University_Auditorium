@@ -134,4 +134,51 @@ public class Auditorium {
         return availableSeats;
     }
 
+    // display of info of the current seating arrangement
+    public void displaySeating() {
+
+        System.out.println("\n===== AUDITORIUM SEATING =====");
+        System.out.println("Meeting Date: " + meetingDate);
+        System.out.println("Meeting Time: " + meetingTime);
+
+        System.out.println("\nLegend: [X] = Reserved | [ ] = Available\n");
+
+        for (int row = 0; row < rows; row++) {
+
+            System.out.print("Row " + (row + 1) + ": ");
+
+            for (int column = 0; column < columns; column++) {
+
+                if (seats[row][column] == null) {
+                    System.out.print("[ ] ");
+                } else {
+                    System.out.print("[X] ");
+                }
+            }
+
+            System.out.println();
+        }
+
+        System.out.println("\nAvailable Seats: " + getAvailableSeatCount());
+
+        System.out.println("Reserved Seats: " + (rows * columns - getAvailableSeatCount()));
+    }
+
+    // getters
+    public String getMeetingDate() {
+        return meetingDate;
+    }
+
+    public String getMeetingTime() {
+        return meetingTime;
+    }
+
+    public int getRows() {
+        return rows;
+    }
+
+    public int getColumns() {
+        return columns;
+    }
+
 }
